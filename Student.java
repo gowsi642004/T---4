@@ -1,40 +1,66 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Student {
+
+        public static void main(String[] args) {
+            
+            //  keys are NAMES (string) and integers are GRADES (integer)
+            
+            Map<String, Integer> students = new HashMap<>();
+            
+            
+            addStudent(students, "Alice", 90);
+            addStudent(students, "Bob", 85);
+
+            displayGrade(students, "Alice");
+
+            removeStudent(students, "Bob");
+            
+        }
     
-
-    public static void main(String[] args) {
-
-        //  keys are NAMES (string) and integers are GRADES (integer)
-        
-        Map<String, Integer> studentone = new HashMap<>();
-
-        studentone.put("rahul", 67);
-        studentone.put("loki", 89);
-
         // method to add a new student
 
-        Map<String, Integer> newStudent = new HashMap<>();
+        public static void addStudent(Map<String, Integer> students, String name, Integer grade) {
 
-        newStudent.put("niki", 89);
+            students.put(name, grade);
 
-        studentone.putAll(newStudent);
+            System.out.println("new student =" + name + ",grade=" + grade);
+        }
+    
+        // method to remove students
 
-        // print grade by using student's name
+        public static void removeStudent(Map<String, Integer> students, String name) {
 
-        int grade = studentone.get("rahul");
+            if (students.containsKey(name)) {
+
+                students.remove(name);
+
+                System.out.println("removed name =" + name);
+
+            } else {
+
+                System.out.println("error : name not found");
+            }
+        }
+    
+        // display student's grade using name
+
+        public static void displayGrade(Map<String, Integer> students, String name) {
+
+            if (students.containsKey(name)) {
+
+                Integer grade = students.get(name);
+
+                System.out.println("student grade=" + grade);
+
+            } else {
+                
+                System.out.println("error :name not found");
+            }
+        }
+    }
 
     
-        System.out.println("rahul grade=" + grade);
 
-        // to remove a student
-
-        studentone.remove("loki");
-
-        System.out.println(studentone);
-
-
-
-    }
-}

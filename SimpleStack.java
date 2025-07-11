@@ -7,21 +7,35 @@ public class SimpleStack {
 
         Stack<Integer> stack = new Stack<>();
 
-        // Push elements
-
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
-
+        
+        stack.push(98);
+        stack.push(76);
+        stack.push(54);
+        System.out.println("popped element: " + stack.pop());
+        System.out.println("stack check:" + stack.isEmpty());
+       
         System.out.println("Stack after pushes: " + stack);
+     }
 
         // Pop an element
 
-        int popped = stack.pop();
+        public void popElement (Stack < Integer> stack , Integer number ) {
 
-        System.out.println("Popped element: " + popped);
+        if (!stack.isEmpty()) {
+
+            int remove = stack.pop();
+
+        System.out.println("Popped element: " + remove);
+
+        }  else {
+
+            System.out.println("stack is empty");
+        }
+    }
 
         // Check if stack is empty
+
+        public void isEmpty (Stack < Integer> stack , Integer number) {
 
         if (stack.isEmpty()) {
 
@@ -31,11 +45,21 @@ public class SimpleStack {
 
             System.out.println("Stack is not empty.");
         }
-
-        // Print current stack
-
-        System.out.println("Current stack: " + stack);
     }
-} 
+
+       // push a new element 
+
+       public void pushElement (Stack < Integer> stack , Integer number) {
+
+          stack.push(67);
+          stack.push(87);
+          stack.push(97);
+
+          System.out.println("pushed element =" + number);
+       }
+
+
+
+}
     
 
